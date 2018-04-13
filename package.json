@@ -1,0 +1,28 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okanoyumi/test.git"
+  },
+  "author": "okanoyumi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okanoyumi/test/issues"
+  },
+  "homepage": "https://github.com/okanoyumi/test#readme",
+  "dependencies": {
+    "sass": "^1.1.1",
+    "swiper": "^4.2.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.8.3"
+  }
+}

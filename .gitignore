@@ -1,6 +1,3 @@
-*.js
-*.json
 .DS_Store
 node_modules/
-css/*
-!style.scss
+asset/
