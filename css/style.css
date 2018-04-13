@@ -1,6 +1,7 @@
-.foo {
-  color: blue; }
-  .foo:hover {
-    color: green; }
-  .foo.is-active {
-    color: red; }
+body {
+  background-color: lightgray;
+  margin: 0 auto; }
+  body p {
+    padding: 0 0 10px; }
+    body p span {
+      font-size: 200%; }
