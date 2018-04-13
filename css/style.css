@@ -1,0 +1,6 @@
+.foo {
+  color: blue; }
+  .foo:hover {
+    color: green; }
+  .foo.is-active {
+    color: red; }
