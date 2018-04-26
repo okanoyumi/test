@@ -5,6 +5,8 @@
  **/
 
 get_header(); ?>
+
+<div class="wrapper">
 <?php
 if ( have_posts() )
 while ( have_posts() ) :
@@ -20,7 +22,7 @@ while ( have_posts() ) :
 <?php the_post_thumbnail(); ?>
 <?php the_content( '読む' ); ?>
 </div>
-
+</div>
 <?php endwhile; ?>
 
 
@@ -61,5 +63,4 @@ while ( have_posts() ) :
 
   </div>
 </section> -->
-
 <?php get_footer(); ?>

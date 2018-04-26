@@ -1,5 +1,3 @@
-@import "./neat/neat";
-
 // 変数の定義
 $base: #DFE4DE;
 $main: #126F80;
@@ -103,6 +101,9 @@ text-decoration: none;
 .post {
 list-style: none;
 }
+footer {
+  background-color: $dark;
+}
 }
 
 //small
@@ -129,4 +130,7 @@ display: none;
 }
 .nav-drawer {
   display: none;
+}
+.wrapper {
+  flex-wrap: wrap;
 }}
