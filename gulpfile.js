@@ -1,15 +1,29 @@
-///岡野追加
-// gulpプラグインの読み込み
-const gulp = require('gulp');
-// Sassをコンパイルするプラグインの読み込み
-const sass = require('gulp-sass');
+  var gulp        = require('gulp');
+  var browserSync = require('browser-sync').create();
+  var sass        = require('gulp-sass');
 
-// style.scssをタスクを作成する
-gulp.task('default', function () {
-  // style.scssファイルを取得
-  gulp.src('source/style.scss')
-    // Sassのコンパイルを実行
-    .pipe(sass())
-    // cssフォルダー以下に保存
-    .pipe(gulp.dest('asset'));
+gulp.task('bs-reload', function() {
+  browserSync.reload();
 });
+
+  // Static Server + watching scss/html files
+  gulp.task('serve', ['sass'], function() {
+
+      browserSync.init({
+        proxy: "vccw.test"
+          // server: "vccw.test"
+      });
+
+      gulp.watch("sources/*.scss", ['sass']);
+      gulp.watch("**/*.php", ['bs-reload']);
+  });
+
+  // Compile sass into CSS & auto-inject into browsers
+  gulp.task('sass', function() {
+      return gulp.src("sources/*.scss")
+          .pipe(sass())
+          .pipe(gulp.dest("./assets/"))
+          .pipe(browserSync.stream());
+  });
+
+  gulp.task('default', ['serve']);

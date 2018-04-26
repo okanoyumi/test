@@ -1,0 +1,132 @@
+@import "./neat/neat";
+
+// 変数の定義
+$base: #DFE4DE;
+$main: #126F80;
+$accent: #F95151;
+$dark: #525E76;
+
+// default
+body {
+    background-color: $base;
+    margin: 10;
+    font-size: 14;
+    font-family: futura, sans-serif;
+    h1, .description {
+      text-align: center;
+  }
+
+// ハンバーガーメニュー
+    header {
+  padding:10px;
+}
+    .nav-drawer {
+  position: relative;
+}
+/*チェックボックス等は非表示に*/
+    .nav-unshown {
+  display: none;
+}
+
+/*アイコンのスペース*/
+    #nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+    #nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: $accent;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+    #nav-open span:before {
+  bottom: -8px;
+}
+    #nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+    #nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+    #nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: $dark;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+  .header-mobile-menu {
+    list-style: none;
+  }
+}
+
+/*チェックが入ったらもろもろ表示*/
+    #nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+    #nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+h2 {
+text-decoration: none;
+}
+.post {
+list-style: none;
+}
+}
+
+//small
+@media (min-width: 300px) and (max-width: 768px) {
+  .header-pc-menu {
+display: none;
+}
+}
+
+// large
+@media screen and (min-width:768px) {
+  .header-pc-menu {
+    display: block;
+    color: $accent;
+    list-style: none;
+    float: right;
+      li {
+      display: inline-block;
+      width: 90px;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+    }
+}
+.nav-drawer {
+  display: none;
+}}
