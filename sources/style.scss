@@ -7,7 +7,7 @@ $dark: #525E76;
 // default
 body {
     background-color: $base;
-    margin: 10;
+    margin: 0;
     font-size: 14;
     font-family: futura, sans-serif;
     h1, .description {
@@ -103,15 +103,29 @@ list-style: none;
 }
 footer {
   background-color: $dark;
+  padding: 5 10px;
 }
 }
 
 //small
 @media (min-width: 300px) and (max-width: 768px) {
-  .header-pc-menu {
+.header-pc-menu {
 display: none;
 }
-}
+.wrapper {
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 0 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .wrapper-s {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }}}
 
 // large
 @media screen and (min-width:768px) {
@@ -132,5 +146,23 @@ display: none;
   display: none;
 }
 .wrapper {
-  flex-wrap: wrap;
-}}
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  box-sizing: inherit;
+  .wrapper-s {
+    width: 90%;
+    margin: 0 20px;
+    .post {
+      max-width: 68em;
+      margin-left: auto;
+      margin-right: auto;
+      }
+    .post-img {
+        height: auto;
+        max-width: 90%;
+        vertical-align: bottom;
+      }}}}
